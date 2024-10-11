@@ -3,26 +3,26 @@
 import styles from './search_bar.module.css'
 import { useState } from 'react'
 
-export default function search_bar() {
+export default function SearchBar({setUserText}) {
 
-  const [inputValue, setInputValue] = useState('');
+  const [textData, setTextData] = useState('');
 
-  const handleInputChange = (event) => {
-    setInputValue(event.target.value)
-  }
-
-  const handleSearch = () => {
-    console.log(inputValue);
+  const setData = () => {
+    setUserText(textData)
   }
 
   return (
     <div className={styles.mainDiv}>
-        <div className={styles.inputField}>
-            <input className={styles.input} placeholder='Type Something ..' onChange={handleInputChange}/>           
-        </div>
-        <div className={styles.searchField} onClick={handleSearch}>
-            Search
-        </div>
+      <div className={styles.inputField}>
+        <input 
+          className={styles.input} 
+          placeholder='Type Something ..' 
+          onChange={(e)=>setTextData(e.target.value)}
+        />           
+      </div>
+      <div className={styles.searchField} onClick={setData}>
+        Search
+      </div>
     </div>
   )
 }

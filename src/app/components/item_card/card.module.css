@@ -1,7 +1,7 @@
 .card{
     box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.3);
-    width: 350px;
-    height: 1000px;
+    width:290px;
+    height: 500px;
     margin: 20px;
     display: flex;
     flex-direction: column;
@@ -15,8 +15,8 @@
 }
 
 .image{
-    height: 320px;
-    width: 320px;
+    height: 220px;
+    width: 220px;
     margin: 20px;
 }
 
@@ -41,7 +41,7 @@
     padding: 20px;
     border-radius: 10px;
     bottom: 20px;
-    
+    z-index: 0;
     position: absolute;
 }
 
@@ -49,22 +49,56 @@
     text-align: justify;
     font-size: 14px;
     color: rgb(75, 75, 75);
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3; 
+    overflow: hidden;
 }
 
 .reviews{
     font-weight: 700;
+    font-size: 14px;
 }
 
 .price{
     font-weight: 700;
+    font-size: 14px;
 }
 
-.itemName{
-    font-size: 20px;
+.itemName {
+    font-size: 11px;
     margin-bottom: 20px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1; 
+    overflow: hidden;
 }
+
 
 .button:hover{
     cursor: pointer;
     transform: scale(1.1);
+}
+
+.itemName:hover{
+    cursor: pointer;
+    overflow: visible;
+    display: block;
+    background-color: rgba(160, 160, 160, 0.979);
+    text-align: center;
+    font-size: 10px;
+}
+
+.description:hover{
+    cursor: pointer; 
+    
+}
+
+.seeMoreButon{
+    color: blue;
+    cursor: pointer;
+}
+
+.seeMoreButon:hover{
+    transform: scale(1.02);
 }

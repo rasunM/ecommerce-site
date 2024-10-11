@@ -21,11 +21,13 @@ export default function card(data) {
           </div>
         </div>
         <div className={styles.itemName}>
-          <h2>{data.data.title}</h2>
+          <h1>{data.data.title}</h1>
         </div>
+        
         <div className={styles.description}>
           {data.data.description}
         </div>
+        <div className={styles.seeMoreButon}>see more ...</div>
       </div>
       <div className={styles.button}>
         Add to cart <FaCartArrowDown />

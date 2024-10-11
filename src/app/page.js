@@ -3,23 +3,40 @@
 import SearchBar from './components/searchbar/search_bar'
 import styles from './page.module.css'
 import Card from './components/item_card/card'
-import { useState } from 'react';
+import { useState, useEffect } from 'react'
 
-export default async function Home() {
+export default function Home() {
+
+  const [dataSet, setDataSet] = useState([]);
+  const [filteredData, setFilteredData] = useState([])
+  const [userText, setUserText] = useState('');
 
 
+  useEffect(()=>{
+    fetch("https://fakestoreapi.com/products").then((data)=>data.json()).then((json)=>{
+    setDataSet(json) 
+    setFilteredData(json)
+  });
+    
+  },[])
 
-  const res = await fetch("https://fakestoreapi.com/products");
-  const dataSet = await res.json();
+  const getValueFromSearchBar = (value) => {
+    setUserText(value);
+  }
 
-
+  useEffect(()=>{
+    const filter = dataSet.filter((e) => e.title.toLowerCase().includes(userText.toLowerCase()));
+    setFilteredData(filter);   
+  },[userText])
 
   return (
     <div className={styles.mainDiv}>
-      <SearchBar/>
+      <SearchBar setUserText={getValueFromSearchBar}/>
       <div className={styles.cardGrid}>
         {
-          dataSet.map((data)=>(<Card key={data.id} data={data}/>))
+          filteredData.map((data) => (
+            <Card key={data.id} data={data} />
+          ))
         }
       </div>
     </div>
