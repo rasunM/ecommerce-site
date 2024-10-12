@@ -1,0 +1,13 @@
+.mainDiv{
+    background-color: black;
+    color: white;
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 30px;
+}
+
+.navigation{
+    cursor: pointer;
+}
