@@ -67,3 +67,19 @@
     display: flex;
     flex-direction: row;
 }
+
+.sortIcon:hover{
+    cursor: pointer;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.764)
+}
+
+.gridIcon:hover{
+    cursor: pointer;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.764)
+}
+
+.filterSection{
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+}

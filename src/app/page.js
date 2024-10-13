@@ -12,6 +12,20 @@ export default function Home() {
   const [dataSet, setDataSet] = useState([]);
   const [filteredData, setFilteredData] = useState([])
   const [userText, setUserText] = useState('');
+  
+
+  // sort in acceding order
+  const sortingFunctionAZ = () => {
+    const sortedData = [...dataSet].sort((a, b) => a.title.localeCompare(b.title));
+    setFilteredData(sortedData);
+  }
+
+  // sort in descending order
+  const sortingFuctionZA = () => {
+    const sortedData = [...dataSet].sort((a, b) => b.title.localeCompare(a.title));
+    setFilteredData(sortedData);
+  }
+  
 
 
   useEffect(()=>{
@@ -36,7 +50,7 @@ export default function Home() {
       <Header/>
       <h1 className={styles.heading}>E-Commerce Application</h1>
       <SearchBar setUserText={getValueFromSearchBar}/>
-      <SortingBar/>
+      <SortingBar sortingFunctionAZ={sortingFunctionAZ} sortingFunctionZA={sortingFuctionZA}/>
       <div className={styles.cardGrid}>
         {
           filteredData.map((data) => (

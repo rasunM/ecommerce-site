@@ -1,0 +1,32 @@
+
+.inputPriceRanger1{
+    
+    height: 2px;
+    width: 100px;
+    margin-right: -2px;
+    color: aqua;
+    
+    
+}
+
+.inputPriceRanger1::-webkit-slider-runnable-track{
+    -webkit-appearance: none;
+    cursor: pointer;
+    color: wheat;
+    
+}
+
+
+
+.inputPriceRanger2{
+    height: 2px;
+    width: 100px;
+}
+
+.range{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+    margin: 0px 6px;
+}

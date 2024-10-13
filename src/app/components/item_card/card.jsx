@@ -3,6 +3,11 @@ import { FaStar } from "react-icons/fa6";
 import { FaCartArrowDown } from "react-icons/fa";
 
 export default function card(data) {
+
+  const doubleGrid = {};
+  const quadrupleGrid = {}
+
+
   return (
     <div className={styles.card}>
       <img src={data.data.image} className={styles.image}/>
