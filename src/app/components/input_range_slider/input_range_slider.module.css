@@ -5,7 +5,7 @@
 .inputPriceRanger1{
     appearance: none;
     height: 2px;
-    width: 200px;
+    width: 300px;
     margin-right: -2px;
     outline: none;
     background: rgb(181, 179, 179);
@@ -17,6 +17,7 @@
     cursor: pointer;
     color: wheat;
     height: 35px;
+
     
 }
 .inputPriceRanger2::-webkit-slider-runnable-track{
@@ -30,7 +31,7 @@
     appearance: none;
     height: 2px;
     margin-top: -2px;
-    width: 200px;
+    width: 300px;
     direction: rtl; 
     outline: none;
     background: rgb(181, 179, 179);

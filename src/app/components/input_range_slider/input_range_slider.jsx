@@ -26,7 +26,7 @@ export default function input_range_slider({setFilteredPrice}) {
           }           
         }} className={styles.inputPriceRanger1} />
 
-        <hr style={{height:'8px', width:`${2*((inputRanger2-inputRanger1)/10)}px`, marginBottom: '-3px', marginTop:'-3px', position:'absolute', left:`${2*(inputRanger1/10)}px`, zIndex:100, outline:'none', backgroundColor: 'black', border:'none', borderRadius:'6px'}}/>
+        <hr style={{height:'8px', width:`${3*((inputRanger2-inputRanger1)/10)}px`, marginBottom: '-3px', marginTop:'-3px', position:'absolute', left:`${3*(inputRanger1/10)}px`, zIndex:100, outline:'none', backgroundColor: 'black', border:'none', borderRadius:'6px'}}/>
 
         <input type='range' min={0} max={1000} step={1} className={styles.inputPriceRanger2} value={1000-inputRanger2} onChange={(e) => {
           if (1000-e.target.value>inputRanger1){

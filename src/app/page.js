@@ -13,6 +13,14 @@ export default function Home() {
   const [filteredData, setFilteredData] = useState([])
   const [userText, setUserText] = useState('');
   const [priceRange, setPriceRange] = useState([0,1000]);
+  const [isWidthOfTheCardNormal, setIsWidthOfTheCardNormal] = useState(false);
+
+  // check whether the width is normal or not
+  const widthFinder = (value) => {
+    setIsWidthOfTheCardNormal(value);
+  }
+
+
 
   // filter according to the price
   const priceFilter = (value) => {
@@ -61,11 +69,11 @@ export default function Home() {
       <Header/>
       <h1 className={styles.heading}>E-Commerce Application</h1>
       <SearchBar setUserText={getValueFromSearchBar}/>
-      <SortingBar sortingFunctionAZ={sortingFunctionAZ} sortingFunctionZA={sortingFuctionZA} trackFilteredPrice={priceFilter}/>
+      <SortingBar sortingFunctionAZ={sortingFunctionAZ} sortingFunctionZA={sortingFuctionZA} trackFilteredPrice={priceFilter} sizeGenerator={widthFinder}/>
       <div className={styles.cardGrid}>
         {
           filteredData.map((data) => (
-            <Card key={data.id} data={data} />
+            <Card key={data.id} data={data} widthNormalOrNot={isWidthOfTheCardNormal?'290px':'390px'}/>
           ))
         }
       </div>
