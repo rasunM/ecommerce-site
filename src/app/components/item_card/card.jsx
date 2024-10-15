@@ -4,10 +4,6 @@ import { FaCartArrowDown } from "react-icons/fa";
 
 
 export default function card({data, widthNormalOrNot}) {
-
-  // set the width of the card accoring to the clicked button
-
-  console.log(widthNormalOrNot.widthNormalOrNot)
   return (
     <div className={styles.card} style={{width: widthNormalOrNot}}>
       <img src={data.image} className={styles.image}/>
