@@ -12,7 +12,12 @@ export default function Home() {
   const [dataSet, setDataSet] = useState([]);
   const [filteredData, setFilteredData] = useState([])
   const [userText, setUserText] = useState('');
-  
+  const [priceRange, setPriceRange] = useState([0,1000]);
+
+  // filter according to the price
+  const priceFilter = (value) => {
+    setPriceRange(value)
+  }
 
   // sort in acceding order
   const sortingFunctionAZ = () => {
@@ -45,12 +50,18 @@ export default function Home() {
     setFilteredData(filter);   
   },[userText])
 
+  // filter the data according the set price 
+  useEffect(() => {
+    const filter = dataSet.filter((e) => e.price>=priceRange[0] & e.price<priceRange[1])
+    setFilteredData(filter)
+  }, [priceRange])
+
   return (
     <div className={styles.mainDiv}>
       <Header/>
       <h1 className={styles.heading}>E-Commerce Application</h1>
       <SearchBar setUserText={getValueFromSearchBar}/>
-      <SortingBar sortingFunctionAZ={sortingFunctionAZ} sortingFunctionZA={sortingFuctionZA}/>
+      <SortingBar sortingFunctionAZ={sortingFunctionAZ} sortingFunctionZA={sortingFuctionZA} trackFilteredPrice={priceFilter}/>
       <div className={styles.cardGrid}>
         {
           filteredData.map((data) => (
