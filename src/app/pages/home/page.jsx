@@ -6,6 +6,7 @@ export default function Home() {
     <div className={styles.mainDiv}>
         <Header/>
         Home Page
+        <input type='range'/>
     </div>
   )
 }
